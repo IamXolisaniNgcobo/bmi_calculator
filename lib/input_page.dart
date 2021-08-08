@@ -9,38 +9,45 @@ class _InputPageState extends State<InputPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('BMI CALCULATOR'),
-        ),
-        body: Column(
-          children: [
-            Expanded(
-                child: Row(
+      appBar: AppBar(
+        title: Text('BMI CALCULATOR'),
+      ),
+      body: Column(
+        children: [
+          Expanded(
+              child: Row(
+            children: [
+              Expanded(
+                child: ReUsableCard(colour: Color(0xFF1D1E33)),
+              ),
+              Expanded(
+                child: ReUsableCard(colour: Color(0xFF1D1E33)),
+              )
+            ],
+          )),
+          Expanded(
+            child: ReUsableCard(colour: Color(0xFF1D1E33)),
+          ),
+          Expanded(
+            child: Row(
               children: [
                 Expanded(
                   child: ReUsableCard(colour: Color(0xFF1D1E33)),
                 ),
                 Expanded(
-                  child: ReUsableCard(colour: Color(0xFF1D1E33)),
-                )
+                  child: ReUsableCard(
+                    colour: Color(0xFF1D1E33),
+                  ),
+                ),
               ],
-            )),
-            Expanded(
-              child: ReUsableCard(colour: Color(0xFF1D1E33)),
             ),
-            Expanded(
-                child: Row(
-              children: [
-                Expanded(
-                  child: ReUsableCard(colour: Color(0xFF1D1E33)),
-                ),
-                Expanded(
-                  child: ReUsableCard(colour: Color(0xFF1D1E33)),
-                )
-              ],
-            ))
-          ],
-        ));
+          ),
+          Container(
+            color: Color(0xFFEB1555),
+          )
+        ],
+      ),
+    );
   }
 }
 

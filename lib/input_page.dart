@@ -27,7 +27,14 @@ class _InputPageState extends State<InputPage> {
                   colour: activeCardColour,
                   cardChild: Column(
                     children: [
-                      Icon(FontAwesomeIcons.mars),
+                      Icon(
+                        FontAwesomeIcons.search,
+                        size: 80.0,
+                      ),
+                      SizedBox(
+                        height: 15.0,
+                      ),
+                      Text('Male'),
                     ],
                   ),
                 ),

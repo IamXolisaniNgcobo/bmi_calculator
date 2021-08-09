@@ -26,10 +26,12 @@ class _InputPageState extends State<InputPage> {
                 child: ReUsableCard(
                   colour: activeCardColour,
                   cardChild: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
                         FontAwesomeIcons.mars,
                         color: Colors.white,
+                        size: 80.0,
                       ),
                       SizedBox(
                         height: 15.0,
@@ -46,7 +48,29 @@ class _InputPageState extends State<InputPage> {
                 ),
               ),
               Expanded(
-                child: ReUsableCard(colour: activeCardColour),
+                child: ReUsableCard(
+                  colour: activeCardColour,
+                  cardChild: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        FontAwesomeIcons.venus,
+                        color: Colors.white,
+                        size: 80.0,
+                      ),
+                      SizedBox(
+                        height: 15.0,
+                      ),
+                      Text(
+                        'FEMALE',
+                        style: TextStyle(
+                          fontSize: 18.0,
+                          color: Color(0xFF8D8E95),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               )
             ],
           )),
@@ -80,12 +104,13 @@ class _InputPageState extends State<InputPage> {
 }
 
 class ReUsableCard extends StatelessWidget {
-  ReUsableCard({required this.colour, this.cardChild});
   final Color colour;
   final Widget? cardChild;
+  ReUsableCard({required this.colour, this.cardChild});
   @override
   Widget build(BuildContext context) {
     return Container(
+      child: cardChild,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: colour,

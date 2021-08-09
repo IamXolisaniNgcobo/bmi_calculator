@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+const bottomContainerHeight = 80.0;
+const activeCardColour = Color(0xFF1D1E33);
+const bottomContainerColour = Color(0xFFEB1555);
 
 class InputPage extends StatefulWidget {
   @override
@@ -18,32 +23,42 @@ class _InputPageState extends State<InputPage> {
               child: Row(
             children: [
               Expanded(
-                child: ReUsableCard(colour: Color(0xFF1D1E33)),
+                child: ReUsableCard(
+                  colour: activeCardColour,
+                  cardChild: Column(
+                    children: [
+                      Icon(FontAwesomeIcons.mars),
+                    ],
+                  ),
+                ),
               ),
               Expanded(
-                child: ReUsableCard(colour: Color(0xFF1D1E33)),
+                child: ReUsableCard(colour: activeCardColour),
               )
             ],
           )),
           Expanded(
-            child: ReUsableCard(colour: Color(0xFF1D1E33)),
+            child: ReUsableCard(colour: activeCardColour),
           ),
           Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: ReUsableCard(colour: Color(0xFF1D1E33)),
+                  child: ReUsableCard(colour: activeCardColour),
                 ),
                 Expanded(
                   child: ReUsableCard(
-                    colour: Color(0xFF1D1E33),
+                    colour: activeCardColour,
                   ),
                 ),
               ],
             ),
           ),
           Container(
-            color: Color(0xFFEB1555),
+            color: bottomContainerColour,
+            margin: EdgeInsets.only(top: 10.0),
+            width: double.infinity,
+            height: bottomContainerHeight,
           )
         ],
       ),
@@ -52,8 +67,9 @@ class _InputPageState extends State<InputPage> {
 }
 
 class ReUsableCard extends StatelessWidget {
-  ReUsableCard({required this.colour});
+  ReUsableCard({required this.colour, this.cardChild});
   final Color colour;
+  final Widget? cardChild;
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -25,7 +25,7 @@ class _InputPageState extends State<InputPage> {
               Expanded(
                 child: ReUsableCard(
                   colour: activeCardColour,
-                  cardChild: ReUsableColumn(
+                  cardChild: ReUsableIconContent(
                     genderIcon: FontAwesomeIcons.mars,
                     genderText: 'FEMALE',
                   ),
@@ -34,7 +34,7 @@ class _InputPageState extends State<InputPage> {
               Expanded(
                 child: ReUsableCard(
                     colour: activeCardColour,
-                    cardChild: ReUsableColumn(
+                    cardChild: ReUsableIconContent(
                       genderIcon: FontAwesomeIcons.venus,
                       genderText: 'FEMALE',
                     )),
@@ -87,10 +87,10 @@ class ReUsableCard extends StatelessWidget {
   }
 }
 
-class ReUsableColumn extends StatelessWidget {
+class ReUsableIconContent extends StatelessWidget {
   final IconData genderIcon;
   final String genderText;
-  ReUsableColumn({required this.genderIcon, required this.genderText});
+  ReUsableIconContent({required this.genderIcon, required this.genderText});
   @override
   Widget build(BuildContext context) {
     return Container(

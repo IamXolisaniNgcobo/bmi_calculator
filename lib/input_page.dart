@@ -25,52 +25,19 @@ class _InputPageState extends State<InputPage> {
               Expanded(
                 child: ReUsableCard(
                   colour: activeCardColour,
-                  cardChild: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        FontAwesomeIcons.mars,
-                        color: Colors.white,
-                        size: 80.0,
-                      ),
-                      SizedBox(
-                        height: 15.0,
-                      ),
-                      Text(
-                        'MALE',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          color: Color(0xFF8D8E95),
-                        ),
-                      ),
-                    ],
+                  cardChild: ReUsableColumn(
+                    genderIcon: FontAwesomeIcons.mars,
+                    genderText: 'FEMALE',
                   ),
                 ),
               ),
               Expanded(
                 child: ReUsableCard(
-                  colour: activeCardColour,
-                  cardChild: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        FontAwesomeIcons.venus,
-                        color: Colors.white,
-                        size: 80.0,
-                      ),
-                      SizedBox(
-                        height: 15.0,
-                      ),
-                      Text(
-                        'FEMALE',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          color: Color(0xFF8D8E95),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                    colour: activeCardColour,
+                    cardChild: ReUsableColumn(
+                      genderIcon: FontAwesomeIcons.venus,
+                      genderText: 'FEMALE',
+                    )),
               )
             ],
           )),
@@ -116,6 +83,37 @@ class ReUsableCard extends StatelessWidget {
         color: colour,
       ),
       margin: EdgeInsets.all(15.0),
+    );
+  }
+}
+
+class ReUsableColumn extends StatelessWidget {
+  final IconData genderIcon;
+  final String genderText;
+  ReUsableColumn({required this.genderIcon, required this.genderText});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            genderIcon,
+            color: Colors.white,
+            size: 80.0,
+          ),
+          SizedBox(
+            height: 15.0,
+          ),
+          Text(
+            genderText,
+            style: TextStyle(
+              fontSize: 18.0,
+              color: Color(0xFF8D8E95),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

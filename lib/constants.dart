@@ -12,3 +12,15 @@ const kLabelTextStyle = TextStyle(
 const kIconColor = Colors.white;
 const kIconSize = 80.8;
 const kNumber = TextStyle(fontSize: 50.0, fontWeight: FontWeight.w900);
+const kButtonLargeText = TextStyle(
+  fontSize: 25.0,
+  fontWeight: FontWeight.bold,
+);
+const kTitleTextStyle = TextStyle(fontSize: 50.0, fontWeight: FontWeight.bold);
+const kResultsTextStyle = TextStyle(
+    color: Color(0xFF24D876), fontSize: 22.0, fontWeight: FontWeight.bold);
+const kBMITextStyle = TextStyle(
+  fontSize: 100.0,
+  fontWeight: FontWeight.bold,
+);
+const kBodyTextStyle = TextStyle(fontSize: 22.0);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'constants.dart';
+import '../constants/constants.dart';
 
 class ReUsableIconContent extends StatelessWidget {
   final IconData genderIcon;
